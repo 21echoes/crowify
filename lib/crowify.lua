@@ -110,6 +110,9 @@ local function query_input(self, position)
                 if param_type == params.tCONTROL then
                     output_min = param.controlspec.minval
                     output_max = param.controlspec.maxval
+                elseif param_type == params.tOPTION then
+                    output_min = 1
+                    output_max = param.count
                 end
                 if param_type == params.tCONTROL or param_type == params.tTAPER then
                     value = util.linlin(input_min, input_max, 0, 1, value)
