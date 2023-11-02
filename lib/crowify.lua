@@ -123,7 +123,7 @@ local function query_input(self, position)
                     params:set(param_id, value)
                 end
             elseif param_type == params.tBINARY or param_type == params.tTRIGGER then
-                local gate_threshold = params:get("gate_threshold_"..i)
+                local gate_threshold = params:get("gate_threshold_"..position)
                 local cleared_threshold = v > gate_threshold
                 if param_type == params.tBINARY then
                     params:delta(param_id, cleared_threshold and 1 or 0)
